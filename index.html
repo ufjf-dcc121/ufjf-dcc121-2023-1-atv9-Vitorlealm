@@ -27,7 +27,12 @@
 
         function enviarForm(event){
             event.preventDefault();
-            console.log("Hello form");
+            const nome = formulario.nome.value;
+            const sobrenome = formulario.sobrenome.value;
+            const idade = Number(formulario.idade.value);
+            const nomeCompleto = `${nome} ${sobrenome}, ${idade} anos`;
+            console.log(nomeCompleto);
+
         }
     </script>
 </body>
