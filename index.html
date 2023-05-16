@@ -41,7 +41,8 @@
             const nomeCompleto = `${nome} ${sobrenome}, ${idade} anos`;
             console.log(nomeCompleto);
             p.innerHTML = `Olá <span>${nomeCompleto}</span>!`;
-
+            formulario.reset();
+            formulario.nome.focus();
         }
     </script>
 </body>
