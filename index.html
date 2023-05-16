@@ -25,12 +25,15 @@
             <input type="submit" />
             <input type="reset" />
         </form>
-        <p></p>
+        <p />
+        <h2>Visitas passadas:</h2>
+        <ol />
     </main>
 
     <script>
         const formulario = document.querySelector("form");
         const p = document.querySelector("p");
+        const orderedList = document.querySelector('ol');
         formulario.addEventListener("submit", enviarForm);
 
         function enviarForm(event){
@@ -41,9 +44,36 @@
             const nomeCompleto = `${nome} ${sobrenome}, ${idade} anos`;
             console.log(nomeCompleto);
             p.innerHTML = `Olá <span>${nomeCompleto}</span>!`;
+
             formulario.reset();
             formulario.nome.focus();
+
+            adicionaText(nome,sobrenome,idade);
         }
+
+        function adicionaText(nome, sobrenome, idade){
+                const li = document.createElement('li');
+                const divPessoa = document.createElement('div');
+                divPessoa.classList.add('pessoa');
+
+                const spanNome = document.createElement('div');
+                spanNome.classList.add('nome');
+                spanNome.textContent = nome;
+                divPessoa.appendChild(spanNome);
+
+                const spanSobrenome = document.createElement('div');
+                spanSobrenome.classList.add('sobrenome');
+                spanSobrenome.textContent = sobrenome;
+                divPessoa.appendChild(spanSobrenome);
+
+                const spanIdade = document.createElement('div');
+                spanIdade.classList.add('idade');
+                spanIdade.textContent = idade;
+                divPessoa.appendChild(spanIdade);
+
+                li.appendChild(divPessoa);
+                orderedList.appendChild(li)
+           }
     </script>
 </body>
 </html>
