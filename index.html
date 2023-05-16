@@ -5,7 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Semana: 9 Forms</title>
+    <style>
+        p>span{
+            color: red;
+        }
+    </style>
 </head>
+
 <body>
     <header>
         <h1>Semana: 9 Forms</h1>
@@ -19,10 +25,12 @@
             <input type="submit" />
             <input type="reset" />
         </form>
+        <p></p>
     </main>
 
     <script>
         const formulario = document.querySelector("form");
+        const p = document.querySelector("p");
         formulario.addEventListener("submit", enviarForm);
 
         function enviarForm(event){
@@ -32,6 +40,7 @@
             const idade = Number(formulario.idade.value);
             const nomeCompleto = `${nome} ${sobrenome}, ${idade} anos`;
             console.log(nomeCompleto);
+            p.innerHTML = `Olá <span>${nomeCompleto}</span>!`;
 
         }
     </script>
