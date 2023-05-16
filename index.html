@@ -20,5 +20,15 @@
             <input type="reset" />
         </form>
     </main>
+
+    <script>
+        const formulario = document.querySelector("form");
+        formulario.addEventListener("submit", enviarForm);
+
+        function enviarForm(event){
+            event.preventDefault();
+            console.log("Hello form");
+        }
+    </script>
 </body>
 </html>
