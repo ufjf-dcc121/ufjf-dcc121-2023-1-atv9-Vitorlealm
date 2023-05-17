@@ -9,6 +9,22 @@
         p>span{
             color: red;
         }
+        .pessoa > div{
+            color: brown;
+            display: inline;
+        }
+        .pessoa > .sobrenome{
+            color: blueviolet;
+        }
+        .pessoa > .idade{
+            color: rgb(7, 99, 68); 
+        }
+        .sobrenome::before {
+            content: ' ';
+        }
+        .idade::before {
+            content: ', ';
+        }
     </style>
 </head>
 
